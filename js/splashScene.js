@@ -3,6 +3,7 @@
 class SplashScene extends Phaser.Scene {
   constructor() {
     super({ key: "splashScene" });
+    this.splashSceneBackgroundImage = null;
   }
 
   init(data) {
@@ -13,7 +14,7 @@ class SplashScene extends Phaser.Scene {
     console.log("Splash Scene");
     this.load.image(
       "splashSceneBackground",
-      "../assets/splashSceneBackground.png",
+      "assets/splashSceneBackground.png",
     );
   }
 
@@ -23,13 +24,12 @@ class SplashScene extends Phaser.Scene {
       0,
       "splashSceneBackground",
     );
-    console.log(this.cameras.main.width);
     this.splashSceneBackgroundImage.x = this.cameras.main.width / 2;
     this.splashSceneBackgroundImage.y = this.cameras.main.height / 2;
   }
 
   update(time, delta) {
-    if (time > 5000) {
+    if (time > 3000) {
       this.scene.start("titleScene");
     }
   }
