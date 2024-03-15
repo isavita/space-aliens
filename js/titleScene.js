@@ -12,10 +12,6 @@ class TitleScene extends Phaser.Scene {
     };
   }
 
-  init(data) {
-    this.cameras.main.setBackgroundColor("#ffffff");
-  }
-
   preload() {
     console.log("Title Scene");
     this.load.image("titleSceneBackground", "assets/aliens_screen_image.jpg");
@@ -34,7 +30,11 @@ class TitleScene extends Phaser.Scene {
       .setOrigin(0.5);
   }
 
-  update(time, delta) {}
+  update(time, delta) {
+    if (time > 6000) {
+      this.scene.switch("menuScene");
+    }
+  }
 }
 
 export default TitleScene;
