@@ -1,7 +1,12 @@
-run = "cowsay Configure me!"
+run = "http-server ."
+modules = ["nodejs-20:v8-20230920-bd784b9"]
 
 [nix]
 channel = "stable-23_11"
 
 [deployment]
-run = ["sh", "-c", "cowsay Configure me!"]
+run = ["sh", "-c", "http-server ."]
+
+[[ports]]
+localPort = 8080
+externalPort = 80
