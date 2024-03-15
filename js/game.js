@@ -1,4 +1,8 @@
 /* global Phaser */
+import SplashScene from "./splashScene.js";
+
+// Game scene
+const splashScene = new SplashScene();
 
 // Game scene
 const config = {
@@ -21,3 +25,9 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
+
+// load scenes
+game.scene.add("splashScene", splashScene);
+
+// start scene
+game.scene.start("splashScene");
